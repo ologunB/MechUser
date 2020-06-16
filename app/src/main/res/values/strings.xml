@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MechanicsApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="ensure_paymentdesc">Ensure you have agreed on Job description and price with the mechanic before making payment</string>
+    <string name="credit">All payments made on this app are secured and login details are only with FlutterWave and the informations won\'t be used for any other purpose than payment.</string>
+</resources>

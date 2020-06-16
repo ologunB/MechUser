@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_car_image_container"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="70dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="true">
+
+            <ImageView
+                android:id="@+id/add_car_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/add_camera" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginTop="30dp"
+        android:hint="Car Make(Brand)"
+        app:hintAnimationEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_car_brand_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_car"
+            android:drawableLeft="@drawable/ic_car"
+            android:drawablePadding="10dp"
+            android:hint="Car Make(Brand)"
+            android:inputType="textPersonName"
+            android:textColor="@color/navy_blue_dark"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:hint="Car Model"
+        app:hintAnimationEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_car_model_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_assistant_black_24dp"
+            android:drawableLeft="@drawable/ic_assistant_black_24dp"
+            android:drawablePadding="10dp"
+            android:hint="Car Model"
+            android:inputType="textPersonName"
+            android:textColor="@color/navy_blue_dark"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:hint="Registration Number"
+        app:hintAnimationEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_car_reg_number_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_confirmation_number_black_24dp"
+            android:drawableLeft="@drawable/ic_confirmation_number_black_24dp"
+            android:drawablePadding="10dp"
+            android:hint="Registration Number"
+            android:inputType="textCapCharacters"
+            android:capitalize="characters"
+            android:maxLength="9"
+            android:textColor="@color/navy_blue_dark"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:hint="Year"
+        app:hintAnimationEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_car_date_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_timelapse_black_24dp"
+            android:drawableLeft="@drawable/ic_timelapse_black_24dp"
+            android:drawablePadding="10dp"
+            android:hint="Year"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textColor="@color/navy_blue_dark"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="0sp"
+            android:layout_height="45dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_bg"
+            android:text="CANCEL"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textColor="@android:color/white"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/add_car_button"
+            android:layout_width="0sp"
+            android:layout_height="45dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@drawable/button_bg"
+            android:text="ADD CAR"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

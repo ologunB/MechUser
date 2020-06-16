@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical"
+    android:gravity="center"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+         android:layout_margin ="10dp"
+        android:gravity="center"
+        android:padding="10sp"
+        android:textColor="@color/black_effective"
+        android:id="@+id/myDebt"
+        android:textSize="35sp"
+        android:text="Debt: --"/>
+
+    <Button
+        android:id="@+id/makePayBtn"
+        style="@style/Button.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+         android:padding="10dp"
+        android:text="Make payment"
+        android:textSize="28sp" />
+
+
+ </LinearLayout>

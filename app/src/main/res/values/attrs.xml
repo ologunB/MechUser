@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoopingViewPager">
+        <attr name="isInfinite" format="boolean"/>
+        <attr name="autoscroll" format="boolean"/>
+        <attr name="wrap_content" format="boolean"/>
+        <attr name="scrollinterval" format="integer"/>
+        <attr name="viewPagerAspectRatio" format="float"/>
+    </declare-styleable>
+</resources>

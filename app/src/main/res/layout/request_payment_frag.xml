@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical"
+    android:gravity="center"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+         android:layout_margin ="10dp"
+        android:id="@+id/payPending"
+        android:gravity="center"
+        android:padding="10sp"
+        android:textColor="@color/black_effective"
+        android:textSize="25sp"
+        android:text="Pay Pending: --"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ppCharge"
+        android:gravity="center"
+        android:padding="10sp"
+        android:textColor="#7A7A74"
+        android:textSize="25sp"
+        android:text="Charge: --"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin ="10dp"
+        android:id="@+id/myBalance"
+        android:gravity="center"
+        android:padding="10sp"
+        android:textColor="@color/black_effective"
+        android:textSize="35sp"
+        android:text="Balance: --"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:background="@drawable/input_border_bottom"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="10sp"
+            android:padding="5sp"
+            android:src="@drawable/naira_icon" />
+
+
+        <EditText
+            android:id="@+id/requestAmountField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:drawablePadding="20sp"
+            android:hint="Amount"
+            android:inputType="number"
+            android:padding="10sp"
+            android:textAllCaps="false"
+            android:textColor="@color/navy_blue_dark"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/requestBtn"
+        style="@style/Button.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+         android:padding="10dp"
+        android:text="Request payment"
+        android:textSize="28sp" />
+
+
+ </LinearLayout>

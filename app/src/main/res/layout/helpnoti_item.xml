@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2sp"
+        android:elevation="3sp"
+        android:orientation="vertical"
+        app:cardElevation="2sp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_margin="3sp"
+                android:src="@drawable/ic_person_black_24dp" />
+
+            <TextView
+                android:id="@+id/eachMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="4sp"
+                android:layout_toRightOf="@id/imageIcon"
+                android:text="lorem pus"
+                android:gravity="center_vertical"
+                android:textColor="@color/navy_blue_dark"
+                android:textSize="17sp"
+                android:layout_marginEnd="20sp"
+                android:layout_toEndOf="@id/imageIcon" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5sp"
+                android:id="@+id/divi1"
+                android:layout_below="@id/eachMessage"
+                android:layout_toRightOf="@id/imageIcon"
+                android:background="@color/gray"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="5sp"
+                android:layout_toEndOf="@id/imageIcon" />
+
+
+            <TextView
+                android:id="@+id/eachTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/eachMessage"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="4sp"
+                android:layout_toRightOf="@id/imageIcon"
+                android:text="lorem pus"
+                android:textColor="@color/gray"
+                android:textSize="12sp"
+                android:layout_marginEnd="20sp"
+                android:layout_toEndOf="@id/imageIcon" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

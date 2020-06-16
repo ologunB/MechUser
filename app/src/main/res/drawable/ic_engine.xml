@@ -1,0 +1,60 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <path
+        android:fillColor="#727172"
+        android:pathData="m30,51v6h8v-6" />
+    <path
+        android:fillColor="#727172"
+        android:pathData="m42,51v6h8v-6" />
+    <path
+        android:fillColor="#727172"
+        android:pathData="m36,21v-10h-8v-4h20v4h-8v10" />
+    <path
+        android:fillColor="#e3e1e3"
+        android:pathData="m2,33h12v6h-12z" />
+    <path
+        android:fillColor="#393939"
+        android:pathData="m14,27h6v18h-6z" />
+    <path
+        android:fillColor="#727172"
+        android:pathData="m20,19h6v34h-6z" />
+    <path
+        android:fillColor="#e3e1e3"
+        android:pathData="m26,21h21c8.284,0 15,6.716 15,15 0,8.284 -6.716,15 -15,15h-21" />
+    <path
+        android:fillColor="#e3aa75"
+        android:pathData="m26,29h4v14h-4z" />
+    <path
+        android:fillColor="#aa8058"
+        android:pathData="m30,29h4v14h-4z" />
+    <path
+        android:fillColor="#e3aa75"
+        android:pathData="m34,29h4v14h-4z" />
+    <path
+        android:fillColor="#aa8058"
+        android:pathData="m38,29h4v14h-4z" />
+    <path
+        android:fillColor="#e3aa75"
+        android:pathData="m42,29h4v14h-4z" />
+    <path
+        android:fillColor="#aa8058"
+        android:pathData="m46,29h4v14h-4z" />
+    <path
+        android:fillColor="#e3aa75"
+        android:pathData="m50,29h4v14h-4z" />
+    <path
+        android:fillColor="#aa8058"
+        android:pathData="m54,29h4v14h-4z" />
+    <path
+        android:fillColor="#e3aa75"
+        android:pathData="m58,43h2.262c1.106,-2.091 1.738,-4.47 1.738,-7s-0.632,-4.909 -1.738,-7h-2.262z" />
+    <path
+        android:fillColor="#727172"
+        android:pathData="m6.586,33 l-4.586,4.586v1.414h1.414l6,-6z" />
+    <path
+        android:fillColor="#727172"
+        android:pathData="m9.414,39 l4.586,-4.586v-1.414h-1.414l-6,6z" />
+</vector>

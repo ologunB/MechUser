@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Item"
+        android:id="@+id/emptytext"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/blue_black_dark"
+        android:layout_centerInParent="true"
+        android:textSize="25sp"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/navy_blue_dark"
+        app:tabGravity="center"
+        app:tabIndicatorColor="#ffffff"
+        app:tabMode="fixed" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabLayout"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:id="@+id/shopfab"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+             app:backgroundTint="@color/navy_blue_dark"
+             android:src="@drawable/ic_shopping_cart_black_24dp"
+            android:layout_alignParentRight="true" />
+
+</RelativeLayout>

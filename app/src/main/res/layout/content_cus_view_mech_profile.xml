@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cyan_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ar_mech_image"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginRight="20sp"
+            android:layout_marginBottom="5sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/engineer" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/ar_mech_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="Edmund Rich"
+                android:textColor="@color/navy_blue_dark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8sp"
+            app:cardCornerRadius="10sp"
+            app:elevation="15sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cyan_light"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="5sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5sp"
+                        android:layout_marginRight="5sp"
+                        android:gravity="center_horizontal"
+                        android:text="Description: "
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/ar_mech_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal"
+                        android:text="PSG Player. Ballon Dór Finalist."
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="5sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5sp"
+                        android:layout_marginRight="5sp"
+                        android:gravity="center_horizontal"
+                        android:text="Location: "
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/ar_mech_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal"
+                        android:text="22, Koforidua, Wuse 2, Abuja, Nigeria"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            app:cardCornerRadius="10sp"
+            app:cardElevation="5sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cyan_light"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:padding="5sp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="5sp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_horizontal"
+                        android:text="Jobs Done:"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ar_mech_jobs_done"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5sp"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@android:color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="5sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_horizontal"
+                        android:text="Rating"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ar_mech_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5sp"
+                        android:gravity="center_horizontal"
+                        android:text="--"
+                        android:textColor="@android:color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="5sp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_horizontal"
+                        android:text="Reviews:"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ar_mech_reviews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5sp"
+                        android:gravity="center_horizontal"
+                        android:text="1"
+                        android:textColor="@android:color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="5sp">
+
+            <Button
+                android:id="@+id/ar_mech_callnow"
+                android:layout_width="0sp"
+                android:layout_height="50dp"
+                android:layout_margin="10sp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:drawableStart="@drawable/ic_call_black_24dp"
+                android:drawableLeft="@drawable/ic_call_black_24dp"
+                android:padding="15sp"
+                android:text="CALL NOW"
+                android:textColor="@android:color/white"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/ar_mech_create_job"
+                android:layout_width="0sp"
+                android:layout_height="45dp"
+                android:layout_margin="10sp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonash_bg"
+                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:paddingRight="15sp"
+                android:text="CREATE JOB"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

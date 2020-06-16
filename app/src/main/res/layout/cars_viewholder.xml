@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/car_image_container"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="true">
+
+            <ImageView
+                android:id="@+id/sd_car_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_car" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/sd_car_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/car_image_container"
+            android:layout_toRightOf="@id/car_image_container"
+            android:text="Toyota"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sd_car_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sd_car_brand"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/car_image_container"
+            android:layout_toRightOf="@id/car_image_container"
+            android:text="Avensis"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/seperator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_toEndOf="@id/sd_car_brand"
+            android:layout_toRightOf="@id/sd_car_brand"
+            android:text="-"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sd_car_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_toEndOf="@id/seperator"
+            android:layout_toRightOf="@id/seperator"
+            android:text="2019"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/remove_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

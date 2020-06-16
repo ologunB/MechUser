@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mechanics.mechapp"
+    android:versionCode="7"
+    android:versionName="1.32">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="FABAT Mngt."
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        tools:replace="android:label"
+        android:fullBackupContent="true">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".mechanic.MechMainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".customer.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".customer.ShopItemActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar" />
+
+        <activity
+            android:name=".customer.ServicesItemActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar" />
+
+        <activity
+            android:name=".customer.DrawerNearbyFragment"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar" />
+
+        <activity
+            android:name=".customer.CustomerViewMechProfile"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar" />
+
+        <activity
+            android:name=".customer.AddCarActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".customer.CustomerSignUp"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".mechanic.MechanicSignUp"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".customer.CustomerPayMech"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".customer.CartActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar" />
+        <activity android:name=".mechanic.MakePaymentActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".customer.ShopContainer"
+            android:configChanges="orientation"
+
+        android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".customer.CartItemActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.ActionBar"
+            android:windowSoftInputMode="stateHidden"/>
+
+    </application>
+</manifest>

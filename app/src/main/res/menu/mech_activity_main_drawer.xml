@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_mech_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+        <item
+            android:id="@+id/drawer_mech_profile"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Profile" />
+        <item
+            android:id="@+id/drawerm_mech_my_jobs"
+            android:icon="@drawable/ic_business_black_24dp"
+            android:title="My Jobs" />
+       <!-- <item
+            android:id="@+id/drawer_mech_cart"
+            android:icon="@drawable/ic_shopping_cart_black_24dp"
+            android:title="Orders" />-->
+        <item
+            android:id="@+id/drawer_mech_notification"
+            android:icon="@drawable/ic_notifications_active_black_24dp"
+            android:title="Notification" />
+
+        <item
+            android:id="@+id/drawer_mech_help"
+            android:icon="@drawable/ic_help_black_24dp"
+            android:title="Help" />
+        <item
+            android:id="@+id/drawer_request_payment"
+            android:icon="@drawable/ic_payment_black_24dp"
+            android:title="Request Payment" />
+        <item
+            android:id="@+id/drawer_make_payment"
+            android:icon="@drawable/ic_view_carousel_black_24dp"
+            android:title="Make Payment" />
+        <item
+            android:id="@+id/drawer_mech_contact"
+            android:icon="@drawable/ic_contact_mail_black_24dp"
+            android:title="Contact Us" />
+    </group>
+
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/drawer_mech_change_password"
+                android:icon="@drawable/ic_format_clear_black_24dp"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/drawer_mech_logout"
+                android:icon="@drawable/ic_first_page_black_24dp"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

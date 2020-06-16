@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navy_blue_dark"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/navy_blue_dark"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1.3"
+            android:background="@color/navy_blue_dark">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                app:cardCornerRadius="12sp"
+                app:cardElevation="0sp">
+
+                <com.mechanics.mechapp.LoopingViewPager
+                    android:id="@+id/home_frag_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:autoscroll="true"
+                    app:isInfinite="true"
+                    app:scrollinterval="5000"
+                    />
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/home_frag_current_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/navy_blue_dark"
+            android:drawableStart="@drawable/ic_location"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="5dp"
+            android:layout_gravity="center_vertical"
+            android:drawableTint="@android:color/holo_red_dark"
+            android:paddingStart="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="0dp"
+
+            android:paddingRight="0dp"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:background="@color/navy_blue_dark">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7sp"
+                android:layout_marginRight="7sp"
+                android:layout_marginBottom="5sp"
+                android:background="@drawable/search_bg"
+                android:elevation="4dp"
+                android:orientation="horizontal"
+                android:padding="2sp">
+
+                <ImageView
+                    android:id="@+id/home_frag_search_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="7sp"
+                    android:src="@drawable/ic_search"
+                    android:tint="@android:color/holo_red_dark" />
+
+                <EditText
+                    android:id="@+id/home_frag_search_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginEnd="40sp"
+                    android:layout_marginRight="40sp"
+                    android:layout_marginBottom="5sp"
+                    android:layout_toEndOf="@id/home_frag_search_btn"
+                    android:layout_toRightOf="@id/home_frag_search_btn"
+                    android:background="@android:color/transparent"
+                    android:focusableInTouchMode="true"
+                    android:hint="Search experts..."
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/home_frag_cancel_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_close"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="2.7"
+            android:background="@color/navy_blue_dark"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/home_frag_search_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="4dp"
+                android:text="Services"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="18sp"
+                app:cardElevation="0sp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_frag_service_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/white"
+                    android:foregroundGravity="center_horizontal"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+                <FrameLayout
+                    android:id="@+id/home_frag_search_recycler_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/home_frag_search_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone" />
+
+                    <ProgressBar
+                        android:id="@+id/home_frag_search_progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp" />
+
+                    <LinearLayout
+                        android:id="@+id/home_frag_search_no_results"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_report_problem_black_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="No Company names match your query"
+                            android:textColor="@android:color/darker_gray"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

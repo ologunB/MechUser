@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+        <item
+            android:id="@+id/drawer_my_garage"
+            android:icon="@drawable/ic_directions_car_black_24dp"
+            android:title="My Garage" />
+        <item
+            android:id="@+id/drawer_mechanics_nearby"
+            android:icon="@drawable/ic_near_me_black_24dp"
+            android:title="Mechanics / Service Nearby" />
+        <item
+            android:id="@+id/drawer_shop"
+            android:icon="@drawable/ic_shopping_basket_black_24dp"
+            android:title="Shop"/>
+       <item
+            android:id="@+id/drawer_cart"
+            android:icon="@drawable/ic_shopping_cart_black_24dp"
+            android:title="Orders" />
+        <item
+            android:id="@+id/drawer_my_jobs"
+            android:icon="@drawable/ic_business_black_24dp"
+            android:title="My Jobs" />
+        <item
+            android:id="@+id/drawer_notification"
+            android:icon="@drawable/ic_notifications_active_black_24dp"
+            android:title="Notification" />
+        <item
+            android:id="@+id/drawer_help"
+            android:icon="@drawable/ic_help_black_24dp"
+            android:title="Help" />
+        <item
+            android:id="@+id/drawer_contact"
+            android:icon="@drawable/ic_contact_mail_black_24dp"
+            android:title="Contact Us" />
+
+    </group>
+
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/drawer_change_password"
+                android:icon="@drawable/ic_format_clear_black_24dp"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/drawer_logout"
+                android:icon="@drawable/ic_first_page_black_24dp"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="25dp"
+            app:cardPreventCornerOverlap="true">
+
+            <ImageView
+                android:id="@+id/service_item_vh_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/engineer" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/service_item_vh_driver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Micah Williams"
+                android:textColor="@android:color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/service_item_vh_number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="08034535689"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp">
+
+            <ImageButton
+                android:id="@+id/service_item_vh_call_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:visibility="gone"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_call_blak_24dp" />
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="10dp"
+                android:visibility="gone"
+                android:layout_toStartOf="@id/service_item_vh_call_btn"
+                android:layout_toLeftOf="@id/service_item_vh_call_btn"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_message_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_item_vh_call_btn"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:drawableLeft="@drawable/ic_format_list_bulleted_black_24dp"
+                android:text="View Details"
+                android:drawableTint="@color/navy_blue_dark"
+                android:textColor="@color/navy_blue_dark"
+                android:drawableStart="@drawable/ic_format_list_bulleted_black_24dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
