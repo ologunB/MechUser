@@ -2,16 +2,17 @@ package com.mechanics.mechapp.customer;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
@@ -23,13 +24,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.mechanics.mechapp.LoginActivity;
 import com.mechanics.mechapp.R;
 
-import java.time.Instant;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class CustomerSignUp extends AppCompatActivity {
     Button sign_up_user_btn;
@@ -37,7 +34,7 @@ public class CustomerSignUp extends AppCompatActivity {
     FirebaseFirestore db;
     DatabaseReference databaseReference;
     FirebaseAuth mAuth;
-    String Name, Email,Password, Phone_no;
+    String Name, Email, Password, Phone_no;
     ProgressDialog mDialog;
 
     private void UserRegister() {
@@ -46,51 +43,48 @@ public class CustomerSignUp extends AppCompatActivity {
         Password = password_text.getText().toString().trim();
         Phone_no = number_text.getText().toString().trim();
 
-        if (TextUtils.isEmpty(Email)){
+        if (TextUtils.isEmpty(Email)) {
             Toast.makeText(CustomerSignUp.this, "Enter Email", Toast.LENGTH_SHORT).show();
             return;
-        }else if (TextUtils.isEmpty(Name)){
+        } else if (TextUtils.isEmpty(Name)) {
             Toast.makeText(CustomerSignUp.this, "Enter Name", Toast.LENGTH_SHORT).show();
             return;
-        }else if (TextUtils.isEmpty(Phone_no)){
+        } else if (TextUtils.isEmpty(Phone_no)) {
             Toast.makeText(CustomerSignUp.this, "Enter Phone Number", Toast.LENGTH_SHORT).show();
             return;
-        }else if (TextUtils.isEmpty(Password)){
+        } else if (TextUtils.isEmpty(Password)) {
             Toast.makeText(CustomerSignUp.this, "Enter Password", Toast.LENGTH_SHORT).show();
             return;
-        }else if (Password.length()<6){
-            Toast.makeText(CustomerSignUp.this,"Password must be greater then 6 digit",Toast.LENGTH_SHORT).show();
+        } else if (Password.length() < 6) {
+            Toast.makeText(CustomerSignUp.this, "Password must be greater then 6 digit", Toast.LENGTH_SHORT).show();
             return;
         }
         mDialog.setMessage("Creating User please wait...");
         mDialog.setCanceledOnTouchOutside(false);
         mDialog.show();
-        mAuth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    try{
-                    sendEmailVerification();
+                if (task.isSuccessful()) {
+                    try {
+                        sendEmailVerification();
 
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         mDialog.dismiss();
-                        Toast.makeText(CustomerSignUp.this,"Does domain exists!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CustomerSignUp.this, "Does domain exists!", Toast.LENGTH_SHORT).show();
                     }
 
-                }else{
-                    Toast.makeText(CustomerSignUp.this,"No connection or Used Email!",Toast.LENGTH_SHORT).show();
-                    mDialog.dismiss();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CustomerSignUp.this,  e.getMessage(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(CustomerSignUp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-     private void sendEmailVerification() {
+    private void sendEmailVerification() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         final String uid = user.getUid();
@@ -101,13 +95,13 @@ public class CustomerSignUp extends AppCompatActivity {
         m.put("Type", "Customer");
         m.put("Uid", uid);
         m.put("State", "Current");
-        m.put("Timestamp",  Calendar.getInstance().getTimeInMillis());
+        m.put("Timestamp", Calendar.getInstance().getTimeInMillis());
 
-         if (user!=null){
+        if (user != null) {
             user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
 
                         db.collection("Customer").document(uid).set(m).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -118,7 +112,7 @@ public class CustomerSignUp extends AppCompatActivity {
                                         databaseReference.child("Customer Collection").child(uid).setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
-                                                 Toast.makeText(CustomerSignUp.this,"Check your Email for verification",Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(CustomerSignUp.this, "Check your Email for verification", Toast.LENGTH_SHORT).show();
                                                 FirebaseAuth.getInstance().signOut();
                                                 startActivity(new Intent(CustomerSignUp.this, LoginActivity.class));
                                             }
@@ -128,13 +122,13 @@ public class CustomerSignUp extends AppCompatActivity {
                             }
                         });
 
-                    }else{
-                        Toast.makeText(CustomerSignUp.this,"An Error has occurred, try again",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(CustomerSignUp.this, "An Error has occurred, try again", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
-        }else{
-            Toast.makeText(CustomerSignUp.this,"An Error has occurred, try again",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(CustomerSignUp.this, "An Error has occurred, try again", Toast.LENGTH_SHORT).show();
         }
     }
 

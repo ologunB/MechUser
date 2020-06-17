@@ -66,7 +66,7 @@ public class MechanicSignUp extends AppCompatActivity {
     StorageReference storageRef;
     Uri Imageuri, ImageCAC, ImagePre1, ImagePre2;
     double myLat, myLong;
-    int p = 0, q = 0 ;
+    int p = 0, q = 0;
     DatabaseReference databaseReference;
     Context c = MechanicSignUp.this;
     private ImageView cacCerti, preWorks1, preWorks2;
@@ -517,7 +517,7 @@ startActivityForResult(galleryIn, 1);
             }
         });
 
-        final String[] myCity = {"Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT - Abuja", "Gombe", "Imo","Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"};
+        final String[] myCity = {"Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT - Abuja", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"};
         //     final String[] lo1 = {"VI", "Ikorodu", "Agege", "Alausa", "Ikosi", "Badagry", "Mushin", "Oshodi", "Berger"};
         //    final String[] lo2 = {"Ibadan", "Bodija", "Egbeda", "Kajola", "Sepeteri", "Ado-Awaye"};
 

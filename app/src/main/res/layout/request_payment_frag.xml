@@ -18,7 +18,7 @@
         android:gravity="center"
         android:padding="10sp"
         android:textColor="@color/black_effective"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:text="Pay Pending: --"/>
 
     <TextView
@@ -29,7 +29,7 @@
         android:gravity="center"
         android:padding="10sp"
         android:textColor="#7A7A74"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:text="Charge: --"/>
     <TextView
         android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
         android:gravity="center"
         android:padding="10sp"
         android:textColor="@color/black_effective"
-        android:textSize="35sp"
+        android:textSize="21sp"
         android:text="Balance: --"/>
 
     <LinearLayout
@@ -72,7 +72,7 @@
             android:padding="10sp"
             android:textAllCaps="false"
             android:textColor="@color/navy_blue_dark"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -84,7 +84,7 @@
         android:layout_gravity="center"
          android:padding="10dp"
         android:text="Request payment"
-        android:textSize="28sp" />
+        android:textSize="19sp" />
 
 
  </LinearLayout>

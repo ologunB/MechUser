@@ -1,48 +1,30 @@
 package com.mechanics.mechapp.mechanic;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import com.flutterwave.raveandroid.RaveConstants;
 import com.flutterwave.raveandroid.RavePayActivity;
 import com.flutterwave.raveandroid.RavePayManager;
-import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.mechanics.mechapp.R;
-import com.mechanics.mechapp.customer.CustomerPayMech;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -109,12 +91,14 @@ public class MakePaymentActivity extends AppCompatActivity {
                         .setlName("Customer_LastName")
                         .setNarration("Cash Payment from first name")
                         .setPublicKey("FLWPUBK-37eaceebb259b1537c67009339575c01-X")
+                        //demo      .setPublicKey("FLWPUBK_TEST-9ba09916a6e4e8385b9fb2036439beac-X")
                         .setEncryptionKey("ab5cfe0059e5253250eb68a4")
+                        //demo     .setEncryptionKey("FLWSECK_TEST3ba765b74b1f")
                         .setTxRef(randomString())
-                       // .acceptAccountPayments(true)
+                        // .acceptAccountPayments(true)
                         .acceptCardPayments(true)
-                      //  .acceptUssdPayments(true)
-                      //  .acceptBankTransferPayments(true)
+                        //  .acceptUssdPayments(true)
+                        //  .acceptBankTransferPayments(true)
                         .onStagingEnv(false)
                         .shouldDisplayFee(true)
                         .showStagingLabel(false)
@@ -130,7 +114,7 @@ public class MakePaymentActivity extends AppCompatActivity {
         if (requestCode == RaveConstants.RAVE_REQUEST_CODE && data != null) {
             String message = data.getStringExtra("response");
             if (resultCode == RavePayActivity.RESULT_SUCCESS) {
-                DoAfterSuccess( );
+                DoAfterSuccess();
             } else if (resultCode == RavePayActivity.RESULT_ERROR) {
                 Toast.makeText(this, "ERROR ", Toast.LENGTH_SHORT).show();
             } else if (resultCode == RavePayActivity.RESULT_CANCELLED) {
@@ -141,7 +125,7 @@ public class MakePaymentActivity extends AppCompatActivity {
         }
     }
 
-    private void  DoAfterSuccess( ) {
+    private void DoAfterSuccess() {
         final String ppA = "0";
         final String cA = String.valueOf((Double.parseDouble(b) * 5) + Double.parseDouble(b));
 
@@ -149,11 +133,11 @@ public class MakePaymentActivity extends AppCompatActivity {
         allJobs.put("Cash Payment Debt", ppA);
         allJobs.put("Completed Amount", cA);
 
-        String  made= "You sent a payment of " + a + "to the FABAT ADMIN, your debt has been cleared.";
+        String made = "You sent a payment of " + a + "to the FABAT ADMIN, your debt has been cleared.";
 
         final Map<String, String> sentMessage = new HashMap<>();
         sentMessage.put("notification_message", made);
-        sentMessage.put("notification_time",  presentTimeString());
+        sentMessage.put("notification_time", presentTimeString());
 
         databaseReference.child("Notification Collection").child("Mechanic").child(uid).child(uid).setValue(sentMessage).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -172,7 +156,7 @@ public class MakePaymentActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-                finish();
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

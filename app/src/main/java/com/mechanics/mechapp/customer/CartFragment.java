@@ -40,10 +40,8 @@ import com.squareup.picasso.Picasso;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -95,7 +93,7 @@ public class CartFragment extends Fragment {
 
         if (list.size() == 0) {
             l1.setVisibility(View.VISIBLE);
-            l2.setVisibility(View.GONE);
+            l2.setVisibility(View.INVISIBLE);
         } else {
 
             recyclerView.setAdapter(adapter);
@@ -141,7 +139,7 @@ public class CartFragment extends Fragment {
 
         Button payForItem = view.findViewById(R.id.buy_shop_item);
 
-            payForItem.setOnClickListener(new View.OnClickListener() {
+        payForItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (t1.getText().toString().isEmpty()) {
@@ -168,15 +166,15 @@ public class CartFragment extends Fragment {
                         .setfName(currentUserName)
                         .setlName(t1.getText().toString())
                         .setNarration("Payment For Items")
-                       .setPublicKey("FLWPUBK-37eaceebb259b1537c67009339575c01-X")
-                      // demo  .setPublicKey("FLWPUBK_TEST-9ba09916a6e4e8385b9fb2036439beac-X")
-                       .setEncryptionKey("ab5cfe0059e5253250eb68a4")
-                      //demo  .setEncryptionKey("FLWSECK_TEST3ba765b74b1f")
+                        .setPublicKey("FLWPUBK-37eaceebb259b1537c67009339575c01-X")
+                        // demo     .setPublicKey("FLWPUBK_TEST-9ba09916a6e4e8385b9fb2036439beac-X")
+                        .setEncryptionKey("ab5cfe0059e5253250eb68a4")
+                        // demo       .setEncryptionKey("FLWSECK_TEST3ba765b74b1f")
                         .setTxRef(payTransactID.toString())
-                      //  .acceptAccountPayments(true)
+                        //  .acceptAccountPayments(true)
                         .acceptCardPayments(true)
-                       // .acceptUssdPayments(true)
-                       // .acceptBankTransferPayments(true)
+                        // .acceptUssdPayments(true)
+                        // .acceptBankTransferPayments(true)
                         .onStagingEnv(false)
                         .shouldDisplayFee(true)
                         .showStagingLabel(false)
@@ -216,7 +214,7 @@ public class CartFragment extends Fragment {
         valuesToCustomer.put("Product Sellers", productListSellers);
         valuesToCustomer.put("Product Numbers", numberOfCartItems);
         valuesToCustomer.put("Product Images", productListImages);
-        int roundVal= (int) Math.round(sub22 * 1.1);
+        int roundVal = (int) Math.round(sub22 * 1.1);
         valuesToCustomer.put("Total Amount Paid", "" + roundVal);
         valuesToCustomer.put("Street Address", t2.getText().toString());
         valuesToCustomer.put("City", t3.getText().toString());
@@ -225,7 +223,7 @@ public class CartFragment extends Fragment {
         valuesToCustomer.put("Trans Description", "Payment for Items");
         valuesToCustomer.put("Trans ID", payTransactID);
         valuesToCustomer.put("Trans Status", "Processing");
-        valuesToCustomer.put("Timestamp",  Calendar.getInstance().getTimeInMillis());
+        valuesToCustomer.put("Timestamp", Calendar.getInstance().getTimeInMillis());
 
         String made = "You have made a payment of ₦" + sub22 * 1.1 +
                 " and has been withdrawn from your Card. Thanks for using FABAT";
@@ -233,7 +231,7 @@ public class CartFragment extends Fragment {
         final Map<String, Object> sentMessage = new HashMap<>();
         sentMessage.put("notification_message", made);
         sentMessage.put("notification_time", presentTimeString());
-        sentMessage.put("Timestamp",  Calendar.getInstance().getTimeInMillis());
+        sentMessage.put("Timestamp", Calendar.getInstance().getTimeInMillis());
 
         databaseReference.child("Cart Collection").child(uid)
                 .child(payTransactID).setValue(valuesToCustomer)

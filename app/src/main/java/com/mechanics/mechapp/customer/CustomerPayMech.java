@@ -65,7 +65,7 @@ public class CustomerPayMech extends AppCompatActivity {
     Context context = CustomerPayMech.this;
     String[] k_val, k_cat;
     StringBuilder TransactionID;
-    String   c_, d_,  uid, MechUId, NameOfMech, NameOfCus, NumberOfMech, NumberOfCus, MEchImage;
+    String c_, d_, uid, MechUId, NameOfMech, NameOfCus, NumberOfMech, NumberOfCus, MEchImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -215,7 +215,7 @@ public class CustomerPayMech extends AppCompatActivity {
                 databaseReference.child("All Jobs Collection").child(MechUId).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot1) {
-                          c_ = dataSnapshot1.child("Pending Job").getValue(String.class);
+                        c_ = dataSnapshot1.child("Pending Job").getValue(String.class);
                         d_ = dataSnapshot1.child("Pending Amount").getValue(String.class);
                     }
 
@@ -364,7 +364,9 @@ public class CustomerPayMech extends AppCompatActivity {
                                 .setlName("")
                                 .setNarration("FABAT MANAGEMENT")
                                 .setPublicKey("FLWPUBK-37eaceebb259b1537c67009339575c01-X")
+                                //demo    .setPublicKey("FLWPUBK_TEST-9ba09916a6e4e8385b9fb2036439beac-X")
                                 .setEncryptionKey("ab5cfe0059e5253250eb68a4")
+                                //demo    .setEncryptionKey("FLWSECK_TEST3ba765b74b1f")
                                 .setTxRef(TransactionID.toString())
                                 //  .acceptAccountPayments(true)
                                 .acceptCardPayments(true)
@@ -416,7 +418,7 @@ public class CustomerPayMech extends AppCompatActivity {
         valuesToCustomer.put("Trans Confirmation", "Unconfirmed");
         valuesToCustomer.put("Mech Confirmation", "Unconfirmed");
         valuesToCustomer.put("hasReviewed", "False");
-        valuesToCustomer.put("Timestamp",  Calendar.getInstance().getTimeInMillis());
+        valuesToCustomer.put("Timestamp", Calendar.getInstance().getTimeInMillis());
 
         Map<String, Object> valuesToMech = new HashMap<>();
         valuesToMech.put("Customer UID", uid);
@@ -430,7 +432,7 @@ public class CustomerPayMech extends AppCompatActivity {
         valuesToMech.put("Trans ID", TransactionID.toString());
         valuesToMech.put("Trans Confirmation", "Unconfirmed");
         valuesToMech.put("Mech Confirmation", "Unconfirmed");
-        valuesToMech.put("Timestamp",  Calendar.getInstance().getTimeInMillis());
+        valuesToMech.put("Timestamp", Calendar.getInstance().getTimeInMillis());
 
         int aa = Integer.parseInt(c_) + 1;
         int bb = Integer.parseInt(d_) + Integer.parseInt(amount_);
@@ -448,12 +450,12 @@ public class CustomerPayMech extends AppCompatActivity {
         final Map<String, Object> sentMessage = new HashMap<>();
         sentMessage.put("notification_message", made);
         sentMessage.put("notification_time", now);
-        sentMessage.put("Timestamp",  Calendar.getInstance().getTimeInMillis());
+        sentMessage.put("Timestamp", Calendar.getInstance().getTimeInMillis());
 
         final Map<String, Object> receivedMessage = new HashMap<>();
         receivedMessage.put("notification_message", received);
         receivedMessage.put("notification_time", now);
-        receivedMessage.put("Timestamp",  Calendar.getInstance().getTimeInMillis());
+        receivedMessage.put("Timestamp", Calendar.getInstance().getTimeInMillis());
 
         databaseReference.child("Jobs Collection").child("Mechanic").child(MechUId).child(TransactionID.toString()).
                 setValue(valuesToMech).addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -268,6 +268,8 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "Check your Email for verification Link", Toast.LENGTH_SHORT).show();
                             FirebaseAuth.getInstance().signOut();
                             dialog.dismiss();
+                            LoginToEither.setText("LOGIN");
+                            loginProgress.setVisibility(View.GONE);
                         }
                     });
                 }
@@ -279,6 +281,8 @@ public class LoginActivity extends AppCompatActivity {
                     onResume();
                     Toast.makeText(LoginActivity.this, "Verify Email", Toast.LENGTH_SHORT).show();
                     FirebaseAuth.getInstance().signOut();
+                    LoginToEither.setText("LOGIN");
+                    loginProgress.setVisibility(View.GONE);
                 }
             });
 
